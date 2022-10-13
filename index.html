@@ -12,9 +12,9 @@
 <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
 
 
-  <title>The Source Message Filters</title>
+  <title>CodePen - Reveal Lens</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="file:///Macintosh HD/Users/aschapiro/Downloads/CodePen - Reveal Lens_files/reset.min.css">
+  <link rel="stylesheet" href="%3AWebFilters/CodePen_files/reset.min.css">
 
   
   
@@ -30,7 +30,7 @@ aside {
   right: 0;
   bottom: 0;
   left: 0;
-  background: hsla(var(--hue, 300),100%,50%,1);
+  background: hsla(var(--hue, 180),100%,50%,1);
   mix-blend-mode: multiply;
 }
 
@@ -63,7 +63,7 @@ main label {
   display: flex;
   flex: 1;
   justify-content: center;
-  background: hsl(var(--hue-label, 300),100%,50%);
+  background: hsl(var(--hue-label, 180),100%,50%);
   font-size: 0;
   line-height: 0;
   border-radius: 50%;
@@ -78,9 +78,8 @@ main label {
   opacity: 1;
 }
 
-
-#cyan + label {
-  --hue-label: 180;
+#red + label {
+  --hue-label: 300;
 }
 
 input:checked + label {
@@ -130,7 +129,7 @@ section {
 </head>
 
 <body translate="no">
-  <section>
+<section>
 <video playsinline=""></video>
 <aside></aside>
 </section>
@@ -140,19 +139,19 @@ section {
       <button>Start</button>
     </li>
     <li>
-      <input type="radio" name="color" id="magenta" data-hue="300" checked="">
-      <label for="magenta">Magenta</label>
+      <input type="radio" name="color" id="blue" data-hue="180" checked="">
+      <label for="blue">Blue</label>
     </li>
     <li>
-      <input type="radio" name="color" id="cyan" data-hue="180">
-      <label for="cyan">Cyan</label>
+      <input type="radio" name="color" id="red" data-hue="300">
+      <label for="red">Red</label>
     </li>
   </ul>
 </main>
   
   
-      <script id="rendered-js">
-document.querySelector('button').addEventListener('pointerdown', function(e) {
+<script id="rendered-js">
+document.querySelector('button').addEventListener('click', function(e) {
   navigator.mediaDevices.getUserMedia({
     audio: false, 
     video: {
@@ -182,7 +181,7 @@ options.forEach(option => {
     document.documentElement.style.setProperty('--hue', e.currentTarget.getAttribute('data-hue'))
   })
 })
-    </script>
+</script>
 
   
 
